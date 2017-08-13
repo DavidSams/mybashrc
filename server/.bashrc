@@ -8,16 +8,19 @@
 ## update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
+## bashrc files directory
+bashrc_dir=~/repos/my-bashrc/server
+
 ## Colors  File
 ## If file exists load .bash_colors for color variables to affect shell output
-if [ -f ~/.bash_colors ]; then
-    . ~/.bash_colors
+if [ -f "$bashrc_dir"/.bash_colors ]; then
+    . "$bashrc_dir"/.bash_colors
 fi
 
 ## Functions File
 ## If file exists load .bash_funct for general bash functions
-if [ -f ~/.bash_funct ]; then
-    . ~/.bash_funct
+if [ -f "$bashrc_dir"/.bash_funct ]; then
+    . "$bashrc_dir"/.bash_funct
 fi
 
 ## Don't put duplicate lines or lines starting with space in the history.
@@ -99,8 +102,8 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 
 ## Alias definitions.
 ## You may want to put all your additions into a separate file like ~/.bash_aliases
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+if [ -f "$bashrc_dir"/.bash_aliases ]; then
+    . "$bashrc_dir"/.bash_aliases
 fi
 
 ## Enable programmable completion features (you don't need to enable
