@@ -38,6 +38,14 @@ PushBranchFunction()
 	    git checkout develop && git merge $branch_name && git push
     fi
 }
+GitAdd() 
+{
+    if [ "$1" = "-f" ]; then
+        git add $(fzf);
+    else
+        git add "$1";
+    fi
+}
 ## Display the list of the available output colors on th terminal
 DisplayOutputColors()
 {

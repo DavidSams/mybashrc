@@ -47,7 +47,7 @@ alias vm='vagrant ssh'
 
 ## Aliases to git stuff
 alias st='git status'
-alias ga='git add $(fzf)'
+alias ga=GitAdd
 alias gc='git commit'
 alias gd='git diff'
 
