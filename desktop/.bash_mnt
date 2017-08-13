@@ -1,0 +1,58 @@
+## Mount / Unmount functions for .bashrc
+
+## local mount parent directory
+parentdirpath="mnt"
+
+## Mount Function
+MountSSHFS() {
+    if [ "$1" == joelhaker.com ]; then
+        user="serverpilot"
+        ip="192.155.92.82"
+        remotedirpath="/srv/users/serverpilot/"
+        localdirpath="$parentdirpath/ftp/joelhaker.com"
+    
+    elif [ "$1" == nspi1 ]; then
+        user="pi"
+        ip="192.168.1.8"
+        remotedirpath="/"
+        localdirpath="$parentdirpath/ftp/nspi1"
+    
+    elif [ "$1" == nspi2 ]; then
+        user="pi"
+        ip="192.168.1.9"
+        remotedirpath="/"
+        localdirpath="$parentdirpath/ftp/nspi2"
+        
+    else
+        echo ""
+        echo "Valid sites include:"
+        echo "joelhaker.com, nspi1, nspi2"
+        echo ""
+        return
+    fi
+
+    [ ! -d $HOME/$localdirpath ] && mkdir $HOME/$localdirpath
+    sudo sshfs -o allow_other -o reconnect -o ServerAliveInterval=15 $user@$ip:$remotedirpath $HOME/$localdirpath -p 22 -C
+}
+
+## Unmount Function
+UnmountSSHFS() {
+    if [ "$1" == joelhaker.com ]; then
+        localdirpath="$parentdirpath/ftp/joelhaker.com"
+    
+    elif [ "$1" == nspi1 ]; then
+        localdirpath="$parentdirpath/ftp/nspi1"
+    
+    elif [ "$1" == nspi2 ]; then
+        localdirpath="$parentdirpath/ftp/nspi2"
+
+    else
+        echo ""
+        echo "Not a valid site to unmount."
+        mount | grep $HOME/$parentdirpath
+        echo ""
+        return
+    fi
+
+    sudo fusermount -u $HOME/$localdirpath
+}

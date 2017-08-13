@@ -1,0 +1,25 @@
+Nc='\033[0m'    # No Color
+Dt='\e[39m'     # Default Color
+Rst='\e[0m'     # Reset All Attributes
+
+Bo='\e[1m'      # Bold
+Dm='\e[2m'      # Dim
+Ul='\e[4m'      # Underline
+Bl='\e[5m'      # Blink
+Rv='\e[7m'      # Reverse
+Hd='\e[8m'      # Hidden
+
+c000='\e[0;30m'  # Black
+cfff='\e[0;37m'  # White
+ca00='\e[0;31m'  # Red
+cf00='\e[0;91m'  # Light Red
+c0a0='\e[0;32m'  # Green
+c0f0='\e[0;92m'  # Light Green
+caa0='\e[0;33m'  # Yellow
+cff0='\e[0;93m'  # Light Yellow
+c00a='\e[0;34m'  # Blue
+c00f='\e[0;94m'  # Light Blue
+ca0a='\e[0;35m'  # Magenta
+cf0f='\e[0;95m'  # Light Magenta
+c0aa='\e[0;36m'  # Cyan
+c0ff='\e[0;96m'  # Light Cyan
