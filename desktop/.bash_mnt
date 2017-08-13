@@ -1,7 +1,7 @@
 ## Mount / Unmount functions for .bashrc
 
 ## local mount parent directory
-parentdirpath="mnt"
+parentdirpath="~/mnt"
 
 ## Mount Function
 MountSSHFS() {
