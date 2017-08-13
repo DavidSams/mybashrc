@@ -41,7 +41,7 @@ PushBranchFunction()
 GitAdd() 
 {
     if [ "$1" = "-f" ]; then
-        git add $(fzf);
+        git add $(find . | fzf);
     else
         git add "$1";
     fi
