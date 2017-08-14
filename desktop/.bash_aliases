@@ -53,7 +53,8 @@ alias gd='git diff'
 alias gp='git push'
 
 ## Aliases to git functions
-alias srepo=SyncRepo
+alias srepo=SyncRepoFunction
+alias smaster=SyncMasterFunction
 alias newbr=NewBranchFunction
 alias prepbr=PrepBranchFunction
 alias pushbr=PushBranchFunction

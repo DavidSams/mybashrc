@@ -2,11 +2,15 @@
 ## All general purpose .bashrc functions go here.
 
 ## Git Functions
-SyncRepo() 
+SyncRepoFunction() 
 {
     git fetch origin && git pull origin master
 }
-SyncUpStream() 
+SyncMasterFunction() 
+{
+    git checkout master && git pull origin develop && git push
+}
+SyncUpstreamfunction() 
 {
     git checkout develop && git pull origin master && git push
 }
