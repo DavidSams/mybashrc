@@ -50,6 +50,7 @@ alias st='git status'
 alias ga=GitAdd
 alias gc='git commit'
 alias gd='git diff'
+alias gp='git push'
 
 ## Aliases to git functions
 alias srepo=SyncRepo
@@ -57,12 +58,13 @@ alias newbr=NewBranchFunction
 alias prepbr=PrepBranchFunction
 alias pushbr=PushBranchFunction
 
-## Mount sftp drive (Have to have it set up in ~/.bashrc)
+## Mount sftp drive (Have to have it set up in ~/.bash_aliases)
 alias mnt=MountSSHFS
 alias umnt=UnmountSSHFS
 
 ## Update aliases
 alias auas='update-all-servers'
+#alias auu='sudo apt-get update && sudo apt-get -y upgrade'
 alias auu='sudo apt-automate'
 alias aar='sudo apt autoremove'
 

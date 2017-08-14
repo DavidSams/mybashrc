@@ -4,7 +4,7 @@
 alias breload="source ~/.bashrc; echo bash config reloaded;"
 
 ## Use htop instead of top
-alias top='htop'
+#alias top='htop'
 
 ## Will make any parent directories necessary
 alias mkdir="mkdir -pv"
@@ -25,8 +25,8 @@ alias lu='ls -ltur'        #  Sort by/show access time,most recent last.
 alias ll='ls -Alpv --group-directories-first'
 alias lll='ls -lp --group-directories-first'
 alias lm='ll |more'        #  Pipe through 'more'
-#alias lr='ll -R'          #  Recursive ls.
-alias tree='tree -Csuh'    #  Nice alternative to 'recursive ls' ...
+alias lr='ll -R'           #  Recursive ls.
+alias tree='tree -Csuh'   #  Nice alternative to 'recursive ls' ...
 
 ## Prints disk usage in human readable form
 alias df='df -Tha --total'
@@ -39,16 +39,25 @@ alias psg="ps aux | grep -v grep | grep -i -e VSZ -e"
 
 ## Alias for fuzzy finder
 alias openit='open $(fzf);'
+alias subit='subl $(fzf);'
 alias vimit='vim $(fzf);'
+
+## Vagrant Aliases
+alias vm='vagrant ssh'
 
 ## Aliases to git stuff
 alias st='git status'
-alias ga='git add $(fzf)'
+alias ga=GitAdd
 alias gc='git commit'
 alias gd='git diff'
+alias gp='git push'
+
+## Aliases to git functions
+alias srepo=SyncRepo
 
 ## Update aliases
 alias auu='sudo apt-get update && sudo apt-get -y upgrade'
+#alias auu='sudo apt-automate'
 alias aar='sudo apt autoremove'
 
 ## Clear the screen of your clutter

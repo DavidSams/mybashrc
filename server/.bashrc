@@ -1,27 +1,20 @@
 ## ~/.bashrc: executed by bash(1) for non-login shells.
-## see /usr/share/doc/bash/examples/startup-files (in the package bash-doc) for examples
 
 ## If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-## Check the window size after each command and, if necessary,
-## update the values of LINES and COLUMNS.
-shopt -s checkwinsize
-
 ## bashrc files directory
-bashrc_dir=~/repos/my-bashrc/server
+bashrc_dir="$HOME/repos/my-bashrc/server"
 
 ## Colors  File
-## If file exists load .bash_colors for color variables to affect shell output
+## If the file exists, load .bash_colors for color variable to affect the .bash output
 if [ -f "$bashrc_dir"/.bash_colors ]; then
     . "$bashrc_dir"/.bash_colors
 fi
 
-## Functions File
-## If file exists load .bash_funct for general bash functions
-if [ -f "$bashrc_dir"/.bash_funct ]; then
-    . "$bashrc_dir"/.bash_funct
-fi
+## Check the window size after each command and, if necessary,
+## update the values of LINES and COLUMNS.
+shopt -s checkwinsize
 
 ## Don't put duplicate lines or lines starting with space in the history.
 ## See bash(1) for more options
@@ -58,12 +51,12 @@ force_color_prompt=true
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	## We have color support; assume it's compliant with Ecma-48
-	## (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	## a case would tend to support setf rather than setaf.)
-	color_prompt=true
+    ## We have color support; assume it's compliant with Ecma-48
+    ## (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+    ## a case would tend to support setf rather than setaf.)
+    color_prompt=true
     else
-	color_prompt=
+    color_prompt=
     fi
 fi
 
@@ -72,8 +65,6 @@ if [ "$color_prompt" = true ]; then
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
-
-unset color_prompt force_color_prompt
 
 ## If this is an xterm set the title to user@host:dir
 case "$TERM" in
@@ -100,8 +91,14 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 #alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 #sleep 10; alert
 
+## Bash functions File
+## If file exists, load .bash_funct for all .bashrc functions
+if [ -f "$bashrc_dir"/.bash_funct ]; then
+    . "$bashrc_dir"/.bash_funct
+fi
+
 ## Alias definitions.
-## You may want to put all your additions into a separate file like ~/.bash_aliases
+## If the file exists, load .bash_aliases for bash aliases
 if [ -f "$bashrc_dir"/.bash_aliases ]; then
     . "$bashrc_dir"/.bash_aliases
 fi
@@ -120,3 +117,5 @@ fi
 ## FZF Command Line Fuzzy Finder
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
+## Unset any variables that were used in this script
+unset color_prompt force_color_prompt bashrc_dir

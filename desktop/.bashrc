@@ -1,44 +1,20 @@
 ## ~/.bashrc: executed by bash(1) for non-login shells.
-## see /usr/share/doc/bash/examples/startup-files (in the package bash-doc) for examples
 
 ## If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-## Check the window size after each command and, if necessary,
-## update the values of LINES and COLUMNS.
-shopt -s checkwinsize
-
 ## bashrc files directory
-bashrc_dir=~/repos/my-bashrc/desktop
+bashrc_dir="$HOME/repos/my-bashrc/desktop"
 
 ## Colors  File
-## If file exists load .bash_colors for color variables to affect shell output
+## If the file exists, load .bash_colors for color variable to affect the .bash output
 if [ -f "$bashrc_dir"/.bash_colors ]; then
     . "$bashrc_dir"/.bash_colors
 fi
 
-## Functions File
-## If file exists load .bash_funct for general bash functions
-if [ -f "$bashrc_dir"/.bash_funct ]; then
-    . "$bashrc_dir"/.bash_funct
-fi
-
-## Mount / Unmount sshfs (sftp) point
-## If file exists load .bash_mnt for sshfs mount functions
-if [ -f "$bashrc_dir"/.bash_mnt ]; then
-    . "$bashrc_dir"/.bash_mnt
-fi
-
-## Bash-Git-Prompt
-GIT_PROMPT_ONLY_IN_REPO=1
-GIT_PROMPT_FETCH_REMOTE_STATUS=0       # avoid fetching remote status
-#GIT_PROMPT_SHOW_UPSTREAM=1            # show upstream tracking branch
-#GIT_PROMPT_SHOW_UNTRACKED_FILES=all   # determines counting of untracked files (no, normal or all) 
-#GIT_PROMPT_SHOW_CHANGED_FILES_COUNT=0 # avoid printing the number of changed files
-#GIT_PROMPT_THEME=Custom               # use theme specified in file GIT_PROMPT_THEME_FILE (default ~/.git-prompt-colors.sh)
-#GIT_PROMPT_THEME_FILE=~/.git-prompt-colors.sh
-#GIT_PROMPT_THEME=Solarized            # use theme optimized for solarized color scheme
-source ~/.bash-git-prompt/gitprompt.sh
+## Check the window size after each command and, if necessary,
+## update the values of LINES and COLUMNS.
+shopt -s checkwinsize
 
 ## Don't put duplicate lines or lines starting with space in the history.
 ## See bash(1) for more options
@@ -115,11 +91,34 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 #alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 #sleep 10; alert
 
+## Bash functions File
+## If file exists, load .bash_funct for all .bashrc functions
+if [ -f "$bashrc_dir"/.bash_funct ]; then
+    . "$bashrc_dir"/.bash_funct
+fi
+
+## Mount / Unmount sshfs (sftp)
+## If the file exists, load .bash_mnt for sshfs mount functions
+if [ -f "$bashrc_dir"/.bash_mnt ]; then
+    . "$bashrc_dir"/.bash_mnt
+fi
+
 ## Alias definitions.
-## You may want to put all your additions into a separate file like ~/.bash_aliases
+## If the file exists, load .bash_aliases for bash aliases
 if [ -f "$bashrc_dir"/.bash_aliases ]; then
     . "$bashrc_dir"/.bash_aliases
 fi
+
+## Bash-Git-Prompt
+GIT_PROMPT_ONLY_IN_REPO=1
+GIT_PROMPT_FETCH_REMOTE_STATUS=0       # avoid fetching remote status
+#GIT_PROMPT_SHOW_UPSTREAM=1            # show upstream tracking branch
+#GIT_PROMPT_SHOW_UNTRACKED_FILES=all   # determines counting of untracked files (no, normal or all) 
+#GIT_PROMPT_SHOW_CHANGED_FILES_COUNT=0 # avoid printing the number of changed files
+#GIT_PROMPT_THEME=Custom               # use theme specified in file GIT_PROMPT_THEME_FILE (default ~/.git-prompt-colors.sh)
+#GIT_PROMPT_THEME_FILE=~/.git-prompt-colors.sh
+#GIT_PROMPT_THEME=Solarized            # use theme optimized for solarized color scheme
+source ~/.bash-git-prompt/gitprompt.sh
 
 ## Enable programmable completion features (you don't need to enable
 ## this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -135,5 +134,5 @@ fi
 ## FZF Command Line Fuzzy Finder
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-## Unset any variables used in this script
+## Unset any variables that were used in this script
 unset color_prompt force_color_prompt bashrc_dir
