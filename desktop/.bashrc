@@ -1,7 +1,10 @@
 ## ~/.bashrc: executed by bash(1) for non-login shells.
 
 ## If not running interactively, don't do anything
-[ -z "$PS1" ] && return
+case $- in
+    *i*) ;;
+      *) return;;
+esac
 
 ## bashrc files directory
 bashrc_dir="$HOME/repos/my-bashrc/desktop"
