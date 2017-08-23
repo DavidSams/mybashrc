@@ -1,7 +1,10 @@
 ## Aliases
 
 ## Reload the .bashrc
-alias breload="source ~/.bashrc; echo bash config reloaded;"
+alias breload='source ~/.bashrc; echo bash config reloaded;'
+
+## Upgrade fzf
+alias updatefzf='cd ~/.fzf && git pull && ./install && cd ~'
 
 ## Use htop instead of top
 alias top='htop'
@@ -49,6 +52,7 @@ alias vm='vagrant ssh'
 alias st='git status'
 alias ga=GitAdd
 alias gc='git commit'
+alias ch='git checkout'
 alias gd='git diff'
 alias gp='git push'
 
