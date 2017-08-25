@@ -100,12 +100,6 @@ if [ -f "$bashrc_dir"/.bash_funct ]; then
     . "$bashrc_dir"/.bash_funct
 fi
 
-## Alias definitions.
-## If the file exists, load .bash_aliases for bash aliases
-if [ -f "$bashrc_dir"/.bash_aliases ]; then
-    . "$bashrc_dir"/.bash_aliases
-fi
-
 ## Enable programmable completion features (you don't need to enable
 ## this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 ## sources /etc/bash.bashrc).
@@ -117,8 +111,15 @@ if ! shopt -oq posix; then
   fi
 fi
 
+## Alias definitions.
+## If the file exists, load .bash_aliases for bash aliases
+if [ -f "$bashrc_dir"/.bash_aliases ]; then
+    . "$bashrc_dir"/.bash_aliases
+fi
+
 ## FZF Command Line Fuzzy Finder
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 ## Unset any variables that were used in this script
 unset color_prompt force_color_prompt bashrc_dir
+

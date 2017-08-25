@@ -41,9 +41,9 @@ alias ps="ps auxf"
 alias psg="ps aux | grep -v grep | grep -i -e VSZ -e"
 
 ## Alias for fuzzy finder
-alias openit='open $(fzf);'
-alias subit='subl $(fzf);'
-alias vimit='vim $(fzf);'
+alias openit='open $(fzf -m);'
+alias subit='subl $(fzf -m);'
+alias vimit='vim $(fzf -m);'
 
 ## Vagrant Aliases
 alias vm='vagrant ssh'
@@ -52,7 +52,7 @@ alias vm='vagrant ssh'
 alias st='git status'
 alias ga=GitAdd
 alias gc='git commit'
-alias ch='git checkout'
+alias gch='git checkout'
 alias gd='git diff'
 alias gp='git push'
 
@@ -88,3 +88,4 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
+
