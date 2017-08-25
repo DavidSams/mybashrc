@@ -14,7 +14,7 @@ alias mkdir="mkdir -pv"
 
 ## Make these general commands verbose and interactive
 # alias rm='rm -vi'
-# alias cp='cp -vi'
+# alias cp='cp -vi
 # alias mv='mv -vi'
 
 ## Aliases for ls
@@ -28,7 +28,7 @@ alias lu='ls -ltur'        #  Sort by/show access time,most recent last.
 alias ll='ls -Alpv --group-directories-first'
 alias lll='ls -lp --group-directories-first'
 alias lm='ll |more'        #  Pipe through 'more'
-i#alias lr='ll -R'           #  Recursive ls.
+#alias lr='ll -R'           #  Recursive ls.
 alias tree='tree -Csuh'    #  Nice alternative to 'recursive ls' ...
 
 ## Prints disk usage in human readable form
