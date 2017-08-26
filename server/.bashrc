@@ -7,7 +7,7 @@ case $- in
 esac
 
 ## bashrc files directory
-bashrc_dir="$HOME/repos/my-bashrc/server"
+bashrc_dir="$HOME/repos/mybashrc/server"
 
 ## Colors  File
 ## If the file exists, load .bash_colors for color variable to affect the .bash output

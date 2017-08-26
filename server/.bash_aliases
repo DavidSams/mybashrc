@@ -14,7 +14,7 @@ alias mkdir="mkdir -pv"
 
 ## Make these general commands verbose and interactive
 # alias rm='rm -vi'
-# alias cp='cp -vi
+# alias cp='cp -vi'
 # alias mv='mv -vi'
 
 ## Aliases for ls
