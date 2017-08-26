@@ -26,6 +26,15 @@ DisplayOutputColors()
         done
     done
 }
+## Add multiple files to git
+GitAdd()
+{
+    if [ "$1" = "-f" ]; then
+        git add $(find . | fzf -m);
+    else
+        git add "$1";
+    fi
+}
 ## copy and go to dir
 cpg (){
   if [ -d "$2" ];then
