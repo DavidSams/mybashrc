@@ -100,6 +100,11 @@ if [ -f "$bashrc_dir"/.bash_funct ]; then
     . "$bashrc_dir"/.bash_funct
 fi
 
+if [ -f ~/.bash-git-prompt/gitprompt.sh ]; then
+    GIT_PROMPT_ONLY_IN_REPO=1
+    source ~/.bash-git-prompt/gitprompt.sh
+fi
+
 ## Enable programmable completion features (you don't need to enable
 ## this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 ## sources /etc/bash.bashrc).
