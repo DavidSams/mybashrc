@@ -1,0 +1,50 @@
+## Mount / Unmount functions for .bashrc
+
+## local mount parent directory
+parentdirpath="~/mnt"
+
+## Mount Function
+MountSSHFS() 
+{
+    if [ "$1" == example1 ]; then
+        user="example_user"
+        ip="192.168.1.8"
+        remotedirpath="/"
+        localdirpath="$parentdirpath/ftp/example1"
+    
+    elif [ "$1" == example2 ]; then
+        user="example_user"
+        ip="192.168.1.9"
+        remotedirpath="/"
+        localdirpath="$parentdirpath/ftp/example2"
+            
+    else
+        echo ""
+        echo "Valid sites include:"
+        echo "example1, example2"
+        echo ""
+        return
+    fi
+
+    [ ! -d $HOME/$localdirpath ] && mkdir $HOME/$localdirpath
+    sudo sshfs -o allow_other -o reconnect -o ServerAliveInterval=15 $user@$ip:$remotedirpath $HOME/$localdirpath -p 22 -C
+}
+## Unmount Function
+UnmountSSHFS() 
+{
+    if [ "$1" == example1 ]; then
+        localdirpath="$parentdirpath/ftp/example1"
+    
+    elif [ "$1" == example2 ]; then
+        localdirpath="$parentdirpath/ftp/example2"
+    
+    else
+        echo ""
+        echo "Not a valid site to unmount."
+        mount | grep $HOME/$parentdirpath
+        echo ""
+        return
+    fi
+
+    sudo fusermount -u $HOME/$localdirpath
+}
