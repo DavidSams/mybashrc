@@ -107,15 +107,17 @@ if [ -f "$bashrc_dir"/.bash_mnt ]; then
 fi
 
 ## Bash-Git-Prompt
-GIT_PROMPT_ONLY_IN_REPO=1
-GIT_PROMPT_FETCH_REMOTE_STATUS=0       # avoid fetching remote status
-#GIT_PROMPT_SHOW_UPSTREAM=1            # show upstream tracking branch
-#GIT_PROMPT_SHOW_UNTRACKED_FILES=all   # determines counting of untracked files (no, normal or all) 
-#GIT_PROMPT_SHOW_CHANGED_FILES_COUNT=0 # avoid printing the number of changed files
-#GIT_PROMPT_THEME=Custom               # use theme specified in file GIT_PROMPT_THEME_FILE (default ~/.git-prompt-colors.sh)
-#GIT_PROMPT_THEME_FILE=~/.git-prompt-colors.sh
-#GIT_PROMPT_THEME=Solarized            # use theme optimized for solarized color scheme
-source ~/.bash-git-prompt/gitprompt.sh
+if [ -f ~/.bash-git-prompt/gitprompt.sh ]; then
+    GIT_PROMPT_ONLY_IN_REPO=1
+    GIT_PROMPT_FETCH_REMOTE_STATUS=0
+    #GIT_PROMPT_SHOW_UPSTREAM=1
+    #GIT_PROMPT_SHOW_UNTRACKED_FILES=all 
+    #GIT_PROMPT_SHOW_CHANGED_FILES_COUNT=0
+    #GIT_PROMPT_THEME=Custom     # use theme specified in file GIT_PROMPT_THEME_FILE (default ~/.git-prompt-colors.sh)
+    #GIT_PROMPT_THEME_FILE=~/.git-prompt-colors.sh
+    #GIT_PROMPT_THEME=Solarize
+    source ~/.bash-git-prompt/gitprompt.sh
+fi
 
 ## Enable programmable completion features (you don't need to enable
 ## this, if it's already enabled in /etc/bash.bashrc and /etc/profile
