@@ -3,6 +3,18 @@
 
 bashrc_dir="$HOME/repos/mybashrc/mac"
 
+## Colors  File
+## If the file exists, load .bash_colors for color variable to affect the .bash output
+if [ -f "$bashrc_dir"/.bash_colors ]; then
+    . "$bashrc_dir"/.bash_colors
+	
+	## Colored promt shell
+	export PS1="\A ${c00f}\w${Rst}\\$ "
+else
+	## Normal promt shell
+	export PS1="\A \w\\$ "
+fi
+
 ## Functions File
 ## If file exists load .bash_funct for general bash functions
 if [ -f "$bashrc_dir"/.bash_funct ]; then
@@ -47,6 +59,7 @@ fi
 ## Bash-Git-Prompt
 if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
     __GIT_PROMPT_DIR=$(brew --prefix)/opt/bash-git-prompt/share
+    GIT_PROMPT_ONLY_IN_REPO=1
     source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
 fi
 
