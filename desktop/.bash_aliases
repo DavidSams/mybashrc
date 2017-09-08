@@ -46,6 +46,8 @@ alias subit='subl $(fzf -m);'
 alias vimit='vim $(fzf -m);'
 
 ## Vagrant Aliases
+alias vu='vagrant up'
+alias vh='vagrant halt'
 alias vm='vagrant ssh'
 
 ## Aliases to git stuff

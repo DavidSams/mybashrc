@@ -19,6 +19,8 @@ alias prepbr=prepbranchfunction
 alias pushbr=pushbranchfunction
 
 ## Vagrant Aliases
+alias vu='vagrant up'
+alias vh='vagrant halt'
 alias vm='vagrant ssh'
 
 ## Aliases for git stuff
@@ -30,10 +32,10 @@ alias gd='git diff'
 alias gp='git push'
 
 ## Aliases for fuzzy finder
-alias openit='open $(fzf)'
-alias vimit='vim $(fzf)'
-alias mvimit='mvim -p --remote-tab-silent $(fzf)'
-alias subit='sublime $(fzf)'
+alias openit='open $(fzf -m)'
+alias vimit='vim $(fzf -m)'
+alias mvimit='mvim -p --remote-tab-silent $(fzf -m)'
+alias subit='sublime $(fzf -m)'
 
 ## Mount sftp drive (Have to have it set up in ~/.bashrc)
 alias mnt=MountSSHFS
