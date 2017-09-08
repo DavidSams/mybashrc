@@ -45,9 +45,6 @@ alias openit='open $(fzf -m);'
 alias subit='subl $(fzf -m);'
 alias vimit='vim $(fzf -m);'
 
-## Vagrant Aliases
-alias vm='vagrant ssh'
-
 ## Aliases to git stuff
 alias st='git status'
 alias ga=GitAdd
