@@ -106,6 +106,10 @@ if [ -f "$bashrc_dir"/.bash_mnt ]; then
     . "$bashrc_dir"/.bash_mnt
 fi
 
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+    source /etc/profile.d/vte-2.91.sh
+fi
+
 ## Bash-Git-Prompt
 if [ -f ~/.bash-git-prompt/gitprompt.sh ]; then
     GIT_PROMPT_ONLY_IN_REPO=1
