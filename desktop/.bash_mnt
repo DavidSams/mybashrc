@@ -20,7 +20,7 @@ MountSSHFS() {
         
     elif [ "$1" == rpiapi ]; then
         user="pi"
-        ip="192.168.1.126"
+        ip="192.168.1.49"
         remotedirpath="/"
         localdirpath="$parentdirpath"/ftp/rpiapi
 
