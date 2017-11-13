@@ -1,10 +1,11 @@
-## Bash_Functions
-## All general purpose .bashrc functions go here.
+# Bash_Functions
+# All general purpose .bashrc functions go here.
 SyncRepo() 
 {
     git fetch origin && git pull origin master
 }
-## Display the list of the available output colors on th terminal
+
+# Display the list of the available output colors on th terminal
 DisplayOutputColors()
 {
     # This program is free software. It comes without any warranty, to
@@ -26,6 +27,7 @@ DisplayOutputColors()
         done
     done
 }
+
 ## Add multiple files to git
 GitAdd()
 {
@@ -35,6 +37,7 @@ GitAdd()
         git add "$1";
     fi
 }
+
 ## copy and go to dir
 cpg (){
   if [ -d "$2" ];then
@@ -43,6 +46,7 @@ cpg (){
     cp $1 $2
   fi
 }
+
 ## move and go to dir
 mvg ()
 {
@@ -52,6 +56,7 @@ mvg ()
     mv $1 $2
   fi
 }
+
 ## Handy Extract Program
 function extract() 
 {
@@ -74,23 +79,28 @@ function extract()
         echo "'$1' is not a valid file!"
     fi
 }
+
 # Creates an archive (*.tar.gz) from given directory.
-function tarthis() 
+function tarit() 
 { 
     tar cvzf "${1%%/}.tar.gz"  "${1%%/}/"; 
 }
+
 # Create a ZIP archive of a file or folder.
-function zipthis() 
+function zipit() 
 { 
     zip -r "${1%%/}.zip" "$1" ; 
 }
+
 # Get IP adress on ethernet
 function my_ip() 
 {
     MY_IP=$(/sbin/ifconfig wlp58s0 | awk '/inet/ { print $2 } ' | sed -e s/addr://)
     echo ${MY_IP:-"Not connected"}
 }
-function ii()   # Get current host related info.
+
+# Get current host related info.
+function ii()   
 {
     echo -e "\nYou are logged on ${ca00}$HOST"
     echo -e "\n${Bo}${c0ff}Additionnal information:${Rst} " ; uname -a
