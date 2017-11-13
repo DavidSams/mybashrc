@@ -76,11 +76,11 @@ alias auu='sudo apt-automate'
 alias aar='sudo apt autoremove'
 
 ## Shortcuts for sshing
-alias sshubuiquity='ssh ubnt@192.168.1.2'
-alias sshfileserver='ssh jhaker@192.168.1.5'
-alias sshrpiapi='ssh pi@192.168.1.49'
-alias sshnspi1='ssh pi@192.168.1.8'
-alias sshnspi2='ssh pi@192.168.1.9'
+alias sshubuiquity='ssh -Y  ubnt@192.168.1.2'
+alias sshfileserver='ssh -Y jhaker@192.168.1.5'
+alias sshrpiapi='ssh -Y pi@192.168.1.49'
+alias sshnspi1='ssh -Y pi@192.168.1.8'
+alias sshnspi2='ssh -Y pi@192.168.1.9'
 
 ## Clear the screen of your clutter
 alias clear='clear;pwd;'
