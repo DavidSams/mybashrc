@@ -1,7 +1,10 @@
 ## Aliases
 
-#Reload the .bash_profile
+## Reload the .bash_profile
 alias breload='source ~/.bash_profile; say bash profile reloaded;'
+
+## Flush dns cache
+alias flushdns='sudo dscacheutil -flushcache && sudo killall -HUP mDNSResponder && say flushed'
 
 ## Will make any parent directories necessary
 alias mkdir="mkdir -pv"
