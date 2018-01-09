@@ -57,7 +57,7 @@ alias gp='git push'
 alias srepo=SyncRepo
 
 ## Update aliases
-alias auu='sudo apt-get update && sudo apt-get -y upgrade'
+alias auu='sudo apt-get update && sudo apt-get -y upgrade && sudo apt autoremove'
 #alias auu='sudo apt-automate'
 alias aar='sudo apt autoremove'
 
