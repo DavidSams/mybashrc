@@ -1,9 +1,12 @@
 ## Aliases
 
-#Reload the .bash_profile
+## Reload the .bash_profile
 alias breload='source ~/.bash_profile; say bash profile reloaded;'
 
 alias qwork='php artisan queue:work'
+
+## Flush dns cache
+alias flushdns='sudo dscacheutil -flushcache && sudo killall -HUP mDNSResponder && say flushed'
 
 ## Will make any parent directories necessary
 alias mkdir="mkdir -pv"
@@ -21,6 +24,8 @@ alias prepbr=prepbranchfunction
 alias pushbr=pushbranchfunction
 
 ## Vagrant Aliases
+alias vu='vagrant up'
+alias vh='vagrant halt'
 alias vm='vagrant ssh'
 
 ## Aliases for git stuff
@@ -34,8 +39,13 @@ alias gp='git push'
 ## Aliases for fuzzy finder
 alias openit='open $(fzf -m)'
 alias vimit='vim $(fzf -m)'
+<<<<<<< HEAD
 alias mvimit='mvim -p --remote-tab-silent $(fzf)'
 alias subit='sublime $(fzf)'
+=======
+alias mvimit='mvim -p --remote-tab-silent $(fzf -m)'
+alias subit='sublime $(fzf -m)'
+>>>>>>> 0256705a2f1f569129c87d47f4c9e3c1101dfb61
 
 ## Mount sftp drive (Have to have it set up in ~/.bashrc)
 alias mnt=MountSSHFS

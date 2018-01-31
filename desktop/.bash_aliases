@@ -46,6 +46,8 @@ alias subit='subl $(fzf -m);'
 alias vimit='vim $(fzf -m);'
 
 ## Vagrant Aliases
+alias vu='vagrant up'
+alias vh='vagrant halt'
 alias vm='vagrant ssh'
 
 ## Aliases to git stuff
@@ -69,15 +71,9 @@ alias umnt=UnmountSSHFS
 
 ## Update aliases
 alias auas='update-all-servers'
-#alias auu='sudo apt-get update && sudo apt-get -y upgrade'
-alias auu='sudo apt-automate'
+alias auu='sudo apt-get update && sudo apt-get -y upgrade && sudo apt autoremove'
+#alias auu='sudo apt-automate'
 alias aar='sudo apt autoremove'
-
-## Shortcuts for sshing
-alias sshubuiquity='ssh ubnt@192.168.1.2'
-alias sshfileserver='ssh jhaker@192.168.1.5'
-alias sshnspi1='ssh pi@192.168.1.8'
-alias sshnspi2='ssh pi@192.168.1.9'
 
 ## Clear the screen of your clutter
 alias clear='clear;pwd;'

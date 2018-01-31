@@ -45,9 +45,6 @@ alias openit='open $(fzf -m);'
 alias subit='subl $(fzf -m);'
 alias vimit='vim $(fzf -m);'
 
-## Vagrant Aliases
-alias vm='vagrant ssh'
-
 ## Aliases to git stuff
 alias st='git status'
 alias ga=GitAdd
@@ -60,7 +57,7 @@ alias gp='git push'
 alias srepo=SyncRepo
 
 ## Update aliases
-alias auu='sudo apt-get update && sudo apt-get -y upgrade'
+alias auu='sudo apt-get update && sudo apt-get -y upgrade && sudo apt autoremove'
 #alias auu='sudo apt-automate'
 alias aar='sudo apt autoremove'
 
