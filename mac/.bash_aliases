@@ -3,6 +3,8 @@
 #Reload the .bash_profile
 alias breload='source ~/.bash_profile; say bash profile reloaded;'
 
+alias qwork='php artisan queue:work'
+
 ## Will make any parent directories necessary
 alias mkdir="mkdir -pv"
 
@@ -30,8 +32,8 @@ alias gd='git diff'
 alias gp='git push'
 
 ## Aliases for fuzzy finder
-alias openit='open $(fzf)'
-alias vimit='vim $(fzf)'
+alias openit='open $(fzf -m)'
+alias vimit='vim $(fzf -m)'
 alias mvimit='mvim -p --remote-tab-silent $(fzf)'
 alias subit='sublime $(fzf)'
 
