@@ -39,13 +39,8 @@ alias gp='git push'
 ## Aliases for fuzzy finder
 alias openit='open $(fzf -m)'
 alias vimit='vim $(fzf -m)'
-<<<<<<< HEAD
-alias mvimit='mvim -p --remote-tab-silent $(fzf)'
-alias subit='sublime $(fzf)'
-=======
 alias mvimit='mvim -p --remote-tab-silent $(fzf -m)'
 alias subit='sublime $(fzf -m)'
->>>>>>> 0256705a2f1f569129c87d47f4c9e3c1101dfb61
 
 ## Mount sftp drive (Have to have it set up in ~/.bashrc)
 alias mnt=MountSSHFS
